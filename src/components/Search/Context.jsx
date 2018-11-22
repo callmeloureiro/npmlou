@@ -12,39 +12,43 @@ const withSearchContext = WrapperComponent => props => (
 );
 
 class SearchContextProvider extends Component {
-  state = {
-    loading: null,
-    valueSearched: null,
-    fetchedPackages: null,
-  };
-
   handleGetPackages = async value => {
-    if (!value || value === this.state.valueSearched) return null;
+    if (!value || value === this.state.store.valueSearched) return null;
 
-    this.setState({
-      loading: true,
-    });
+    this.setState(prevState => ({
+      store: {
+        ...prevState.store,
+        loading: true,
+      },
+    }));
 
     const fetchedPackages = await getPackage(value);
     const { results } = fetchedPackages;
 
-    this.setState({
-      loading: false,
-      valueSearched: value,
-      results,
-    });
+    this.setState(prevState => ({
+      store: {
+        ...prevState.store,
+        loading: false,
+        valueSearched: value,
+        results,
+      },
+    }));
+  };
+
+  state = {
+    store: {
+      loading: null,
+      valueSearched: null,
+      results: null,
+    },
+    handleGetPackages: this.handleGetPackages,
   };
 
   render() {
     const { children } = this.props;
 
     return (
-      <SearchContext.Provider
-        value={{
-          store: this.state,
-          handleGetPackages: this.handleGetPackages,
-        }}
-      >
+      <SearchContext.Provider value={this.state}>
         {children}
       </SearchContext.Provider>
     );

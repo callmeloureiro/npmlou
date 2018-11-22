@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import './Search.sass';
 
 class SearchForm extends Component {
+  inputElm = createRef();
+
   handleSubmit = e => {
     e.preventDefault();
 
     const { submit } = this.props;
-    const { value } = this.inputElm;
+    const { value } = this.inputElm.current;
 
     submit(value);
   };
@@ -14,11 +16,7 @@ class SearchForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="search__form">
-        <input
-          placeholder="Package"
-          type="text"
-          ref={input => (this.inputElm = input)}
-        />
+        <input placeholder="Package" type="text" ref={this.inputElm} />
         <small>Press enter to search.</small>
       </form>
     );

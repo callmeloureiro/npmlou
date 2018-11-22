@@ -102,6 +102,7 @@
       "^Components(.*)$": "<rootDir>/src/components$1",
       "^Pages(.*)$": "<rootDir>/src/pages$1",
       "^Services(.*)$": "<rootDir>/src/services$1",
+      "^Utils(.*)$": "<rootDir>/src/utils$1",
       "^react-native$": "react-native-web",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
     },

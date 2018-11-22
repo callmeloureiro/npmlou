@@ -1,5 +1,3 @@
-
-
 const fs = require('fs');
 const path = require('path');
 const resolve = require('resolve');
@@ -149,6 +147,7 @@ module.exports = {
       Components: path.resolve('src', 'components'),
       Pages: path.resolve('src', 'pages'),
       Services: path.resolve('src', 'services'),
+      Utils: path.resolve('src', 'utils'),
       'react-native': 'react-native-web',
     },
     plugins: [

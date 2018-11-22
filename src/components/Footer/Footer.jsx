@@ -13,8 +13,7 @@ const Footer = () => {
         <Row>
           <Column>
             <p>
-              Desenvolvido com muito <i className="fa fa-heart" /> por Matheus
-              Loureiro
+              Developed with <i className="fa fa-heart" /> by Matheus Loureiro
             </p>
           </Column>
         </Row>
