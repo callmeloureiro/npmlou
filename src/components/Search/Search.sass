@@ -1,0 +1,79 @@
+.search__container
+    margin: 0 auto
+    width: 100%
+    max-width: 60rem
+    
+.search__form
+    display: flex
+    flex-flow: column
+
+    small
+        margin-top: .5rem
+        font-size: 1.3rem
+        color: #b3b3b3
+
+    input
+        flex: 1
+        font-size: 2rem
+        border: none
+        box-shadow: 0 2px 2px 0 rgba(black, 0.16), 0 0 0 1px rgba(black, 0.08)
+        -webkit-box-shadow: 0 2px 2px 0 rgba(black, 0.16), 0 0 0 1px rgba(black, 0.08)
+        -webkit-appearance: none
+        border-radius: 0
+
+    button
+        margin-left: 1.5rem
+        background: none
+        border: none
+        font-size: 2rem
+
+    input,
+    button
+        padding: 1.5rem
+
+.search__list
+    margin-top: 3rem
+    background: white
+
+    &--nostyle
+        box-shadow: none !important
+        background: none
+
+    &:not(.search__loading)
+        box-shadow: 0 2px 2px 0 rgba(black, 0.16), 0 0 0 1px rgba(black, 0.08)
+        -webkit-box-shadow: 0 2px 2px 0 rgba(black, 0.16), 0 0 0 1px rgba(black, 0.08)
+        -webkit-appearance: none
+
+    &.search__loading
+        display: flex
+        justify-content: center
+        background: none
+
+    &-item 
+        padding: 1.5rem
+        border-bottom: 1px solid rgba(black, 0.06)
+        display: flex
+        flex-flow: column
+        cursor: pointer
+
+        &:hover
+            background: #fbfbfb
+
+    &-item__header
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        h2
+            margin-bottom: 0.5rem
+
+        span
+            font-size: 1.4rem
+
+        i
+            margin-right: .5rem
+
+    &-item__content
+        p
+            font-size: 1.6rem
+

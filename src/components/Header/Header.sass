@@ -1,0 +1,25 @@
+$color-text-shadow: rgba(black, .3)
+    
+.header
+    margin-top: 20rem
+    transition: all .2s ease
+    
+    @media (max-width: 600px)
+        margin-top: 10rem
+
+    &--top 
+        margin-top: 1rem
+
+    .column
+        display: flex
+        justify-content: center
+
+    &__title
+        font-size: 11rem
+        margin-bottom: 2rem
+        color: #FBFBFB
+        transform: skewX(-5deg)
+        text-shadow: -1px -1px 0 $color-text-shadow, 1px -1px 0 $color-text-shadow, -1px 1px 0 $color-text-shadow, 1px 1px 0 $color-text-shadow
+
+        @media (max-width: 600px)
+            font-size: 7rem
