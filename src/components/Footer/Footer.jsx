@@ -13,7 +13,14 @@ const Footer = () => {
         <Row>
           <Column>
             <p>
-              Developed with <i className="fa fa-heart" /> by Matheus Loureiro
+              Developed with <i className="fa fa-heart" /> by{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="http://github.com/callmeloureiro"
+              >
+                Matheus Loureiro
+              </a>
             </p>
           </Column>
         </Row>
