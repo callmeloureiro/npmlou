@@ -1,0 +1,29 @@
+.modal
+    display: flex
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    align-items: center
+    justify-content: center
+    background: rgba(black, 0.2)
+
+    &__container
+        position: relative
+        padding: 2rem
+        background: white
+        width: 60%
+
+    &__header
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__button
+        &-close
+            background: none
+            box-shadow: none
+            border: none
+            font-size: 2.5rem
+            cursor: pointer

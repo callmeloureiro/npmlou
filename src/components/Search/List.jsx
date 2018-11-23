@@ -2,11 +2,11 @@ import React from 'react';
 
 import Loader from 'Components/Loader';
 
-import { isEmpty, openWindow } from 'Utils';
+import { isEmpty } from 'Utils';
 
 import './Search.sass';
 
-const SearchList = ({ results, loading }) => {
+const SearchList = ({ results, loading, handleOpenModal }) => {
   if (!loading && !results) return null;
 
   if (!!loading) {
@@ -27,16 +27,14 @@ const SearchList = ({ results, loading }) => {
 
   return (
     <ul className="search__list">
-      {results.map(pkg => {
-        const { name, description, version, links } = pkg.package;
-        const { npm, respository } = links;
-        const link = respository || npm;
+      {results.map((pkg, index) => {
+        const { name, description, version } = pkg.package;
 
         return (
           <li
             key={`pkg-${name}`}
             className="search__list-item"
-            onClick={() => openWindow(link)}
+            onClick={() => handleOpenModal(index)}
           >
             <div className="search__list-item__header">
               <h2>{name}</h2>

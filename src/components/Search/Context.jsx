@@ -35,13 +35,34 @@ class SearchContextProvider extends Component {
     }));
   };
 
+  handleOpenModal = idx => {
+    this.setState(prevState => ({
+      store: {
+        ...prevState.store,
+        resultIndex: idx,
+      },
+    }));
+  };
+
+  handleCloseModal = () => {
+    this.setState(prevState => ({
+      store: {
+        ...prevState.store,
+        resultIndex: null,
+      },
+    }));
+  };
+
   state = {
     store: {
       loading: null,
       valueSearched: null,
       results: null,
+      resultIndex: null,
     },
     handleGetPackages: this.handleGetPackages,
+    handleOpenModal: this.handleOpenModal,
+    handleCloseModal: this.handleCloseModal,
   };
 
   render() {
