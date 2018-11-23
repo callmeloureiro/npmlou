@@ -39,7 +39,7 @@ const ModalSearch = ({ children, index, handleCloseModal, searchContext }) => {
       <i className="search__separator" />
       <ul className="search__modal-links">
         {Object.keys(links).map(elm => (
-          <li key={links[elm]}>
+          <li key={`${elm}-${links[elm]}`}>
             <strong>{elm}:</strong>{' '}
             <a href={links[elm]} target="_blank" rel="noopener noreferrer">
               {links[elm]}

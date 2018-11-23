@@ -13,7 +13,9 @@ const withSearchContext = WrapperComponent => props => (
 
 class SearchContextProvider extends Component {
   handleGetPackages = async value => {
-    if (!value || value === this.state.store.valueSearched) return null;
+    const { valueSearched } = this.state.store;
+
+    if (!value || value === valueSearched) return null;
 
     this.setState(prevState => ({
       store: {
