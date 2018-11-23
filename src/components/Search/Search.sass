@@ -82,6 +82,9 @@
         box-shadow: 0 2px 2px 0 rgba(black, 0.16), 0 0 0 1px rgba(black, 0.08)
         -webkit-box-shadow: 0 2px 2px 0 rgba(black, 0.16), 0 0 0 1px rgba(black, 0.08)
 
+        @media (max-width: 600px)
+            width: 90%
+
     .modal__header
         margin-bottom: 1.5rem
 
@@ -92,6 +95,9 @@
         display: flex
         padding: 0
 
+        @media (max-width: 600px)
+            flex-flow: column
+
         li
             list-style: none
             &:not(:last-child)
@@ -100,8 +106,20 @@
     &-links
         padding: 0
 
+        @media (max-width: 600px)
+            flex-flow: column
+
         li
             list-style: none
+
+            @media (max-width: 600px)
+                display: flex
+                flex-flow: column
+                font-size: 1.3rem
+
+                &:not(:last-child)
+                    margin-bottom: 1rem
+                
 
 .search__separator
     width: 100%
